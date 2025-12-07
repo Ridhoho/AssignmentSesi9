@@ -1,15 +1,15 @@
 function validateStudentsData(students) {
   for (let student of students) {
-    if (typeof student.name !== "string" && 
-        student.name === "" && 
-        student.age <= 0 && 
-        student.score < 0 && 
+    if (typeof student.name !== "string" || 
+        student.name === "" || 
+        student.age < 0 || 
+        student.score < 0 || 
         student.score > 100) {
-      return true;
+      return false;
     }
   }
 
-  return false;
+  return true;
 }
 
 const students = [
